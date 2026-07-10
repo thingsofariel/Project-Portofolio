@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ariel S Toi — Web Developer &amp; System Architect</title>
+<meta name="description" content="Portfolio of Ariel S Toi — IT Support, Web Developer, System Architect.">
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ BACKGROUND GRID ============ -->
+<div class="blueprint-grid" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<header class="site-header">
+  <div class="container nav-inner">
+    <a href="#top" class="logo">AST<span class="logo-dot">.</span><span class="logo-sub">dev</span></a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#about"><span class="idx">01</span>About</a>
+      <a href="#skills"><span class="idx">02</span>Skills</a>
+      <a href="#projects"><span class="idx">03</span>Projects</a>
+      <a href="#contact"><span class="idx">04</span>Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle dark / light theme" title="Toggle theme">
+        <i class="bi bi-moon-stars-fill theme-icon-dark"></i>
+        <i class="bi bi-sun-fill theme-icon-light"></i>
+      </button>
+      <button id="navToggle" class="icon-btn nav-burger" aria-label="Open menu" aria-expanded="false">
+        <i class="bi bi-list"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow"><i class="bi bi-braces"></i> Portfolio — Sheet 00 / Overview</p>
+        <h1>Ariel S Toi</h1>
+        <p class="role-line">
+          <span class="role-tag">IT Support</span>
+          <span class="role-tag">Web Developer</span>
+          <span class="role-tag">System Architect</span>
+        </p>
+
+        <blockquote class="tagline">
+          “AI will most likely never replace you — but someone who can use AI
+          better than you, might.”
+        </blockquote>
+
+        <div class="hero-actions">
+          <a href="assets/CV-Ariel-S-Toi.pdf" class="btn btn-primary" download>
+            <i class="bi bi-download"></i> Download CV
+          </a>
+          <a href="#projects" class="btn btn-ghost">
+            <i class="bi bi-arrow-down-right"></i> View Projects
+          </a>
+        </div>
+
+        <p class="hero-note"><i class="bi bi-file-earmark-pdf"></i> Note for Ariel: add your CV file at <code>assets/CV-Ariel-S-Toi.pdf</code>, or edit the link above.</p>
+      </div>
+
+      <div class="hero-visual">
+        <div class="id-card">
+          <div class="id-card-top">
+            <span class="id-dot red"></span><span class="id-dot yellow"></span><span class="id-dot green"></span>
+            <span class="id-card-label">access_card.tsx</span>
+          </div>
+
+          <div class="photo-slot photo-slot--hero">
+            <div class="photo-placeholder">
+              <i class="bi bi-person-circle"></i>
+              <span>assets/images/profile.webp</span>
+            </div>
+            <img src="assets/images/profile.webp" alt="Ariel S Toi" onerror="this.remove()">
+          </div>
+
+          <div class="id-card-info">
+            <h3>Ariel S Toi</h3>
+            <p>System Architect</p>
+            <div class="id-card-footer">
+              <span><span class="status-dot"></span>Online — Kupang, NTT</span>
+              <a href="#contact" class="btn btn-mini">Contact</a>
+            </div>
+          </div>
+        </div>
+        <div class="corner-tag corner-tag--tl">FIG. 01</div>
+        <div class="corner-tag corner-tag--br">SCALE 1:1</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="title-block">
+        <span class="title-block-index">01</span>
+        <div>
+          <h2>About</h2>
+          <p class="title-block-sub">Background &amp; specification sheet</p>
+        </div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-copy card">
+          <p>
+            As a Computer Science graduate and dedicated web developer and system
+            architect, I focus on building robust, high-performance, and highly
+            scalable solutions with clean, modular codebases. My technical expertise
+            spans structural architecture, system stability, and front-end
+            technologies like HTML, CSS, and Bootstrap Icons to craft seamless user
+            interfaces.
+          </p>
+          <p>
+            Embracing a <strong>“SeniorIntern”</strong> mindset, I am deeply committed
+            to continuous growth, mastering modern web ecosystems, and optimizing
+            runtime performance. Beyond the screen, I am passionate about leveraging
+            open-source collaboration to drive community empowerment and digital
+            literacy.
+          </p>
+
+          <div class="tag-row">
+            <span class="tag"><i class="bi bi-camera"></i> Photography</span>
+            <span class="tag"><i class="bi bi-translate"></i> Fluent English speaker</span>
+            <span class="tag"><i class="bi bi-geo-alt"></i> Kupang, NTT — Indonesia</span>
+          </div>
+        </div>
+
+        <div class="about-stats">
+          <div class="stat-card card">
+            <span class="stat-value">3.47</span>
+            <span class="stat-label">GPA</span>
+          </div>
+          <div class="stat-card card">
+            <span class="stat-value">4<span class="stat-plus">+</span></span>
+            <span class="stat-label">Repos Shipped</span>
+          </div>
+          <div class="stat-card card">
+            <span class="stat-value"><i class="bi bi-diagram-3"></i></span>
+            <span class="stat-label">Full-Stack &amp; Systems</span>
+          </div>
+
+          <div class="photo-slot photo-slot--about card">
+            <div class="photo-placeholder">
+              <i class="bi bi-image"></i>
+              <span>assets/images/about.webp</span>
+            </div>
+            <img src="assets/images/about.webp" alt="Ariel at work" onerror="this.remove()">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="section section--alt" id="skills">
+    <div class="container">
+      <div class="title-block">
+        <span class="title-block-index">02</span>
+        <div>
+          <h2>Skills &amp; Tools</h2>
+          <p class="title-block-sub">Stack used across shipped projects</p>
+        </div>
+      </div>
+
+      <div class="skills-groups">
+
+        <div class="skills-group">
+          <h3 class="skills-group-title">Backend &amp; Data</h3>
+          <div class="skills-grid">
+            <div class="skill-card"><i class="bi bi-nodejs"></i><span>Node.js</span></div>
+            <div class="skill-card"><i class="bi bi-hdd-network"></i><span>Express</span></div>
+            <div class="skill-card"><i class="bi bi-database"></i><span>PostgreSQL</span></div>
+            <div class="skill-card"><i class="bi bi-database-fill-gear"></i><span>Prisma ORM</span></div>
+            <div class="skill-card"><i class="bi bi-lightning-charge"></i><span>Redis / BullMQ</span></div>
+            <div class="skill-card"><i class="bi bi-file-earmark-easel"></i><span>SQLite</span></div>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <h3 class="skills-group-title">Frontend</h3>
+          <div class="skills-grid">
+            <div class="skill-card"><i class="bi bi-filetype-html"></i><span>HTML5</span></div>
+            <div class="skill-card"><i class="bi bi-filetype-css"></i><span>CSS3</span></div>
+            <div class="skill-card"><i class="bi bi-bootstrap"></i><span>Bootstrap / Icons</span></div>
+            <div class="skill-card"><i class="bi bi-filetype-js"></i><span>JavaScript</span></div>
+            <div class="skill-card"><i class="bi bi-lightning"></i><span>React + Vite</span></div>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <h3 class="skills-group-title">Infra &amp; Tools</h3>
+          <div class="skills-grid">
+            <div class="skill-card"><i class="bi bi-box-seam"></i><span>Docker Compose</span></div>
+            <div class="skill-card"><i class="bi bi-github"></i><span>Git / GitHub</span></div>
+            <div class="skill-card"><i class="bi bi-shield-lock"></i><span>JWT Auth</span></div>
+            <div class="skill-card"><i class="bi bi-file-earmark-pdf"></i><span>Puppeteer / qpdf</span></div>
+            <div class="skill-card"><i class="bi bi-terminal"></i><span>Fedora Linux</span></div>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <h3 class="skills-group-title">Beyond Code</h3>
+          <div class="skills-grid">
+            <div class="skill-card"><i class="bi bi-camera"></i><span>Photography</span></div>
+            <div class="skill-card"><i class="bi bi-translate"></i><span>English (fluent)</span></div>
+            <div class="skill-card"><i class="bi bi-diagram-3"></i><span>System Architecture</span></div>
+            <div class="skill-card"><i class="bi bi-life-preserver"></i><span>IT Support</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="title-block">
+        <span class="title-block-index">03</span>
+        <div>
+          <h2>Projects</h2>
+          <p class="title-block-sub">Selected builds — click through for source</p>
+        </div>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <article class="project-card card">
+          <div class="photo-slot photo-slot--project">
+            <div class="photo-placeholder">
+              <i class="bi bi-receipt-cutoff"></i>
+              <span>assets/images/projects/payslip.webp</span>
+            </div>
+            <img src="assets/images/projects/payslip.webp" alt="Payslip system screenshot" onerror="this.remove()">
+          </div>
+          <div class="project-body">
+            <div class="project-head">
+              <h3>Payslip Management System</h3>
+              <span class="project-tag">Full-Stack</span>
+            </div>
+            <p>
+              A full-stack payslip system with role-based auth, automated total
+              calculation via a Postgres trigger, background PDF generation, and
+              secure shareable payslip links.
+            </p>
+            <div class="tag-row tag-row--small">
+              <span class="tag">Node.js</span>
+              <span class="tag">Express</span>
+              <span class="tag">Prisma</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Redis/BullMQ</span>
+              <span class="tag">React + Vite</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/thingsofariel/Payslip" target="_blank" rel="noopener">
+                <i class="bi bi-github"></i> Source
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card card">
+          <div class="photo-slot photo-slot--project">
+            <div class="photo-placeholder">
+              <i class="bi bi-mortarboard"></i>
+              <span>assets/images/projects/fortuna-center.webp</span>
+            </div>
+            <img src="assets/images/projects/fortuna-center.webp" alt="Fortuna Center website screenshot" onerror="this.remove()">
+          </div>
+          <div class="project-body">
+            <div class="project-head">
+              <h3>Fortuna Center Website</h3>
+              <span class="project-tag">Web App</span>
+            </div>
+            <p>
+              Web platform built for Fortuna English Global Learning, supporting the
+              organization's day-to-day operations and online presence.
+            </p>
+            <div class="tag-row tag-row--small">
+              <span class="tag">Node.js</span>
+              <span class="tag">Express</span>
+              <span class="tag" title="Confirm with Ariel">Confirm stack ✎</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/handfortunateam-dev/fortuna-center-app" target="_blank" rel="noopener">
+                <i class="bi bi-github"></i> Source
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card card">
+          <div class="photo-slot photo-slot--project">
+            <div class="photo-placeholder">
+              <i class="bi bi-heart"></i>
+              <span>assets/images/projects/wedding.webp</span>
+            </div>
+            <img src="assets/images/projects/wedding.webp" alt="Wedding invitation site screenshot" onerror="this.remove()">
+          </div>
+          <div class="project-body">
+            <div class="project-head">
+              <h3>Wedding Invitation Website</h3>
+              <span class="project-tag">Web App</span>
+            </div>
+            <p>
+              A digital wedding invitation with RSVP, paginated guest wishes, live
+              countdown timer, photo gallery, and gift bank account display.
+            </p>
+            <div class="tag-row tag-row--small">
+              <span class="tag">HTML/CSS/JS</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">Express</span>
+              <span class="tag">SQLite</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="link-disabled" title="Add your repo/live link">
+                <i class="bi bi-link-45deg"></i> Add link
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card card">
+          <div class="photo-slot photo-slot--project">
+            <div class="photo-placeholder">
+              <i class="bi bi-person-workspace"></i>
+              <span>assets/images/projects/personal-web.webp</span>
+            </div>
+            <img src="assets/images/projects/personal-web.webp" alt="Personal portfolio site screenshot" onerror="this.remove()">
+          </div>
+          <div class="project-body">
+            <div class="project-head">
+              <h3>Personal Web Portfolio</h3>
+              <span class="project-tag">This Site</span>
+            </div>
+            <p>
+              This very portfolio — a blueprint-themed, dark/light responsive site
+              built from scratch with plain HTML, CSS and JavaScript.
+            </p>
+            <div class="tag-row tag-row--small">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="link-disabled" title="Add your repo link">
+                <i class="bi bi-github"></i> Add link
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section section--alt" id="contact">
+    <div class="container">
+      <div class="title-block">
+        <span class="title-block-index">04</span>
+        <div>
+          <h2>Contact</h2>
+          <p class="title-block-sub">Open to work &amp; collaboration</p>
+        </div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-copy card">
+          <p class="contact-lead">Have a project in mind, or just want to talk architecture and AI-assisted dev? Reach out.</p>
+          <a class="btn btn-primary" href="mailto:arieslsyaloomtoi@gmail.com">
+            <i class="bi bi-envelope"></i> arieslsyaloomtoi@gmail.com
+          </a>
+        </div>
+
+        <div class="contact-links">
+          <a class="contact-link card" href="https://github.com/thingsofariel" target="_blank" rel="noopener">
+            <i class="bi bi-github"></i>
+            <span>GitHub</span>
+            <small>thingsofariel</small>
+          </a>
+          <a class="contact-link card" href="https://wa.me/6281358704911" target="_blank" rel="noopener">
+            <i class="bi bi-whatsapp"></i>
+            <span>WhatsApp</span>
+            <small>081358704911</small>
+          </a>
+          <a class="contact-link card" href="https://www.instagram.com/ariel.toi" target="_blank" rel="noopener">
+            <i class="bi bi-instagram"></i>
+            <span>Instagram</span>
+            <small>ariel.toi</small>
+          </a>
+          <a class="contact-link card" href="https://www.facebook.com/ariel.anando" target="_blank" rel="noopener">
+            <i class="bi bi-facebook"></i>
+            <span>Facebook</span>
+            <small>ariel anando</small>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© <span id="year"></span> Ariel S Toi. Built with HTML, CSS &amp; JS.</p>
+    <p class="footer-tag">SeniorIntern mindset. Always shipping.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
