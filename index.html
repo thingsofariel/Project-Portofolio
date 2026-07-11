@@ -47,6 +47,11 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero" id="hero">
+    <div class="aurora" aria-hidden="true">
+      <span class="aurora-blob aurora-blob--a"></span>
+      <span class="aurora-blob aurora-blob--b"></span>
+      <span class="aurora-blob aurora-blob--c"></span>
+    </div>
     <div class="container hero-inner">
       <div class="hero-text">
         <p class="eyebrow"><i class="bi bi-braces"></i> Portfolio — Sheet 00 / Overview</p>
@@ -75,7 +80,8 @@
       </div>
 
       <div class="hero-visual">
-        <div class="id-card">
+        <div class="id-card" id="tiltCard">
+          <div class="id-card-glow" aria-hidden="true"></div>
           <div class="id-card-top">
             <span class="id-dot red"></span><span class="id-dot yellow"></span><span class="id-dot green"></span>
             <span class="id-card-label">access_card.tsx</span>
@@ -107,7 +113,7 @@
   <!-- ============ ABOUT ============ -->
   <section class="section" id="about">
     <div class="container">
-      <div class="title-block">
+      <div class="title-block reveal">
         <span class="title-block-index">01</span>
         <div>
           <h2>About</h2>
@@ -116,7 +122,7 @@
       </div>
 
       <div class="about-grid">
-        <div class="about-copy card">
+        <div class="about-copy card reveal">
           <p>
             As a Computer Science graduate and dedicated web developer and system
             architect, I focus on building robust, high-performance, and highly
@@ -141,25 +147,36 @@
         </div>
 
         <div class="about-stats">
-          <div class="stat-card card">
+          <div class="stat-card card reveal">
             <span class="stat-value">3.47</span>
             <span class="stat-label">GPA</span>
           </div>
-          <div class="stat-card card">
+          <div class="stat-card card reveal">
             <span class="stat-value">4<span class="stat-plus">+</span></span>
             <span class="stat-label">Repos Shipped</span>
           </div>
-          <div class="stat-card card">
+          <div class="stat-card card reveal">
             <span class="stat-value"><i class="bi bi-diagram-3"></i></span>
             <span class="stat-label">Full-Stack &amp; Systems</span>
           </div>
 
-          <div class="photo-slot photo-slot--about card">
-            <div class="photo-placeholder">
-              <i class="bi bi-image"></i>
-              <span>assets/images/about.webp</span>
+          <div class="lanyard reveal" id="lanyard">
+            <span class="lanyard-clip"></span>
+            <svg class="lanyard-string" viewBox="0 0 2 60" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M1,0 L1,60" />
+            </svg>
+            <div class="lanyard-badge">
+              <div class="photo-slot photo-slot--about">
+                <div class="photo-placeholder">
+                  <i class="bi bi-image"></i>
+                  <span>assets/images/about.webp</span>
+                </div>
+                <img src="assets/images/about.webp" alt="Ariel at work" onerror="this.remove()">
+              </div>
+              <div class="lanyard-badge-strip">
+                <i class="bi bi-code-slash"></i> Full Stack &amp; Systems
+              </div>
             </div>
-            <img src="assets/images/about.webp" alt="Ariel at work" onerror="this.remove()">
           </div>
         </div>
       </div>
@@ -169,7 +186,7 @@
   <!-- ============ SKILLS ============ -->
   <section class="section section--alt" id="skills">
     <div class="container">
-      <div class="title-block">
+      <div class="title-block reveal">
         <span class="title-block-index">02</span>
         <div>
           <h2>Skills &amp; Tools</h2>
@@ -179,7 +196,7 @@
 
       <div class="skills-groups">
 
-        <div class="skills-group">
+        <div class="skills-group reveal">
           <h3 class="skills-group-title">Backend &amp; Data</h3>
           <div class="skills-grid">
             <div class="skill-card"><i class="bi bi-nodejs"></i><span>Node.js</span></div>
@@ -191,7 +208,7 @@
           </div>
         </div>
 
-        <div class="skills-group">
+        <div class="skills-group reveal">
           <h3 class="skills-group-title">Frontend</h3>
           <div class="skills-grid">
             <div class="skill-card"><i class="bi bi-filetype-html"></i><span>HTML5</span></div>
@@ -202,7 +219,7 @@
           </div>
         </div>
 
-        <div class="skills-group">
+        <div class="skills-group reveal">
           <h3 class="skills-group-title">Infra &amp; Tools</h3>
           <div class="skills-grid">
             <div class="skill-card"><i class="bi bi-box-seam"></i><span>Docker Compose</span></div>
@@ -213,7 +230,7 @@
           </div>
         </div>
 
-        <div class="skills-group">
+        <div class="skills-group reveal">
           <h3 class="skills-group-title">Beyond Code</h3>
           <div class="skills-grid">
             <div class="skill-card"><i class="bi bi-camera"></i><span>Photography</span></div>
@@ -230,7 +247,7 @@
   <!-- ============ PROJECTS ============ -->
   <section class="section" id="projects">
     <div class="container">
-      <div class="title-block">
+      <div class="title-block reveal">
         <span class="title-block-index">03</span>
         <div>
           <h2>Projects</h2>
@@ -241,7 +258,7 @@
       <div class="projects-grid">
 
         <!-- Project 1 -->
-        <article class="project-card card">
+        <article class="project-card card reveal">
           <div class="photo-slot photo-slot--project">
             <div class="photo-placeholder">
               <i class="bi bi-receipt-cutoff"></i>
@@ -276,7 +293,7 @@
         </article>
 
         <!-- Project 2 -->
-        <article class="project-card card">
+        <article class="project-card card reveal">
           <div class="photo-slot photo-slot--project">
             <div class="photo-placeholder">
               <i class="bi bi-mortarboard"></i>
@@ -307,7 +324,7 @@
         </article>
 
         <!-- Project 3 -->
-        <article class="project-card card">
+        <article class="project-card card reveal">
           <div class="photo-slot photo-slot--project">
             <div class="photo-placeholder">
               <i class="bi bi-heart"></i>
@@ -339,7 +356,7 @@
         </article>
 
         <!-- Project 4 -->
-        <article class="project-card card">
+        <article class="project-card card reveal">
           <div class="photo-slot photo-slot--project">
             <div class="photo-placeholder">
               <i class="bi bi-person-workspace"></i>
@@ -376,7 +393,7 @@
   <!-- ============ CONTACT ============ -->
   <section class="section section--alt" id="contact">
     <div class="container">
-      <div class="title-block">
+      <div class="title-block reveal">
         <span class="title-block-index">04</span>
         <div>
           <h2>Contact</h2>
@@ -385,7 +402,7 @@
       </div>
 
       <div class="contact-grid">
-        <div class="contact-copy card">
+        <div class="contact-copy card reveal">
           <p class="contact-lead">Have a project in mind, or just want to talk architecture and AI-assisted dev? Reach out.</p>
           <a class="btn btn-primary" href="mailto:arieslsyaloomtoi@gmail.com">
             <i class="bi bi-envelope"></i> arieslsyaloomtoi@gmail.com
@@ -393,22 +410,22 @@
         </div>
 
         <div class="contact-links">
-          <a class="contact-link card" href="https://github.com/thingsofariel" target="_blank" rel="noopener">
+          <a class="contact-link card reveal" href="https://github.com/thingsofariel" target="_blank" rel="noopener">
             <i class="bi bi-github"></i>
             <span>GitHub</span>
             <small>thingsofariel</small>
           </a>
-          <a class="contact-link card" href="https://wa.me/6281358704911" target="_blank" rel="noopener">
+          <a class="contact-link card reveal" href="https://wa.me/6281358704911" target="_blank" rel="noopener">
             <i class="bi bi-whatsapp"></i>
             <span>WhatsApp</span>
             <small>081358704911</small>
           </a>
-          <a class="contact-link card" href="https://www.instagram.com/ariel.toi" target="_blank" rel="noopener">
+          <a class="contact-link card reveal" href="https://www.instagram.com/ariel.toi" target="_blank" rel="noopener">
             <i class="bi bi-instagram"></i>
             <span>Instagram</span>
             <small>ariel.toi</small>
           </a>
-          <a class="contact-link card" href="https://www.facebook.com/ariel.anando" target="_blank" rel="noopener">
+          <a class="contact-link card reveal" href="https://www.facebook.com/ariel.anando" target="_blank" rel="noopener">
             <i class="bi bi-facebook"></i>
             <span>Facebook</span>
             <small>ariel anando</small>

@@ -61,4 +61,3 @@ assets/images/      → put your photos here
 Easiest free option: **GitHub Pages**. Push this folder to a repo, then in
 repo Settings → Pages, set source to the `main` branch root. Or drag-and-drop
 the folder into Netlify/Vercel for an instant URL.
-# Project-Portofolio
