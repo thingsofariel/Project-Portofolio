@@ -100,16 +100,14 @@ html[data-theme="light"] .blueprint-grid { opacity: .4; }
 
 /* 3. Penempatan Ombak Bergerak (Mengalir dari dasar ke atas) */
 .ocean-bg {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -5px; /* Sedikit offset agar tidak bocor di edge bawah */
-  width: 100%;
-  height: 35vh; /* Mengambil ruang sepertiga layar bawah */
-  min-height: 200px;
-  z-index: 2; /* Di atas grid statis, namun tetap di bawah z-index konten utama */
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh; /* Gunakan full height layar */
+  z-index: 1; /* Tetap di bawah konten utama (index 2/10) */
+  pointer-events: none;
   overflow: hidden;
-  opacity: 0.65; /* Transparansi agar grid blueprint di belakangnya tetap tembus pandang */
+  opacity: 0.8; /* Sedikit transparansi agar menyatu dengan kedalaman background */
 }
 
 .waves {
@@ -117,21 +115,24 @@ html[data-theme="light"] .blueprint-grid { opacity: .4; }
   height: 100%;
 }
 
-/* 4. Sistem Parallax Gelombang (Bergerak horizontal loop secara seamless) */
+/* Sistem Parallax Gelombang (Bergerak Horizontal Seamless Loop) */
 .parallax > use {
-  animation: move-forever 20s cubic-bezier(.55, .5, .45, .5) infinite;
+  animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
 }
-.parallax > use:nth-child(1) { animation-delay: -2s; animation-duration: 8s; }
-.parallax > use:nth-child(2) { animation-delay: -4s; animation-duration: 12s; }
-.parallax > use:nth-child(3) { animation-delay: -5s; animation-duration: 16s; }
-.parallax > use:nth-child(4) { animation-delay: -7s; animation-duration: 22s; }
 
+/* Buat pergerakan tiap lapisan lebih dinamis */
+.parallax > use:nth-child(1) { animation-delay: -2s; animation-duration: 9s; }
+.parallax > use:nth-child(2) { animation-delay: -4s; animation-duration: 14s; }
+.parallax > use:nth-child(3) { animation-delay: -5s; animation-duration: 19s; }
+.parallax > use:nth-child(4) { animation-delay: -7s; animation-duration: 28s; }
+
+/* Koordinat Horizontal: Bergerak Loop di Skala Penuh Layar */
 @keyframes move-forever {
   0% { transform: translate3d(-90px, 0, 0); }
   100% { transform: translate3d(85px, 0, 0); }
 }
 
-/* Pastikan seluruh elemen utama naik ke layer atas secara konsisten */
+/* Pastikan semua konten utama naik ke layer atas secara konsisten */
 .site-header, main, .site-footer { 
   position: relative; 
   z-index: 10; 
