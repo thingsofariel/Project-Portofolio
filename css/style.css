@@ -68,58 +68,74 @@ a { color: inherit; text-decoration: none; }
   padding: 0 24px;
 }
 
-/* ---- Blueprint grid background ---- */
-.blueprint-grid {
+/* =========================================================
+   Unified Schematic Background (Grid + Waves Layer)
+   ========================================================= */
+
+/* 1. Wadah Utama Background (Mengunci di balik semua konten) */
+.blueprint-grid-wrapper {
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+/* 2. Grid Cetak Biru Statis */
+.blueprint-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
   background-image:
     linear-gradient(var(--line) 1px, transparent 1px),
     linear-gradient(90deg, var(--line) 1px, transparent 1px);
   background-size: 48px 48px;
-  opacity: .35;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 90%);
+  opacity: .25;
+  /* Masking halus agar grid memudar di tepi luar layar */
+  mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, #000 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, #000 40%, transparent 100%);
 }
-html[data-theme="light"] .blueprint-grid { opacity: .5; }
+html[data-theme="light"] .blueprint-grid { opacity: .4; }
 
-/* =========================================================
-   Ocean Wave Background Animation
-   ========================================================= */
+/* 3. Penempatan Ombak Bergerak (Mengalir dari dasar ke atas) */
 .ocean-bg {
-  position: fixed;
+  position: absolute;
   left: 0;
-  bottom: 0;
+  right: 0;
+  bottom: -5px; /* Sedikit offset agar tidak bocor di edge bawah */
   width: 100%;
-  height: 22vh;
-  min-height: 120px;
-  max-height: 280px;
-  z-index: 1; /* Berada tepat di atas grid (0) tapi di bawah konten (2) */
-  pointer-events: none;
+  height: 35vh; /* Mengambil ruang sepertiga layar bawah */
+  min-height: 200px;
+  z-index: 2; /* Di atas grid statis, namun tetap di bawah z-index konten utama */
   overflow: hidden;
+  opacity: 0.65; /* Transparansi agar grid blueprint di belakangnya tetap tembus pandang */
 }
 
 .waves {
-  position: relative;
   width: 100%;
   height: 100%;
 }
 
+/* 4. Sistem Parallax Gelombang (Bergerak horizontal loop secara seamless) */
 .parallax > use {
-  animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+  animation: move-forever 20s cubic-bezier(.55, .5, .45, .5) infinite;
 }
-.parallax > use:nth-child(1) { animation-delay: -2s; animation-duration: 9s; }
-.parallax > use:nth-child(2) { animation-delay: -4s; animation-duration: 13s; }
-.parallax > use:nth-child(3) { animation-delay: -5s; animation-duration: 17s; }
-.parallax > use:nth-child(4) { animation-delay: -7s; animation-duration: 25s; }
+.parallax > use:nth-child(1) { animation-delay: -2s; animation-duration: 8s; }
+.parallax > use:nth-child(2) { animation-delay: -4s; animation-duration: 12s; }
+.parallax > use:nth-child(3) { animation-delay: -5s; animation-duration: 16s; }
+.parallax > use:nth-child(4) { animation-delay: -7s; animation-duration: 22s; }
 
 @keyframes move-forever {
   0% { transform: translate3d(-90px, 0, 0); }
   100% { transform: translate3d(85px, 0, 0); }
 }
 
-/* Everything else sits above the grid & waves */
-.site-header, main, .site-footer { position: relative; z-index: 2; }
+/* Pastikan seluruh elemen utama naik ke layer atas secara konsisten */
+.site-header, main, .site-footer { 
+  position: relative; 
+  z-index: 10; 
+}
 
 /* =========================================================
    Focus states (accessibility)
