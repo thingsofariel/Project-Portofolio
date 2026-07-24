@@ -5,9 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ariel S Toi — Web Developer &amp; System Architect</title>
 <meta name="description" content="Portfolio of Ariel S Toi — IT Support, Web Developer, System Architect.">
+<meta name="theme-color" content="#0A0D12">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+<link rel="manifest" href="assets/favicon/site.webmanifest">
+
+<!-- Open Graph / Twitter card. NOTE: swap og:url below for your real domain once deployed -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ariel S Toi — Web Developer &amp; System Architect">
+<meta property="og:description" content="Portfolio of Ariel S Toi — IT Support, Web Developer, System Architect.">
+<meta property="og:image" content="https://thingsofariel.github.io/Project-Portofolio/assets/images/profile.webp">
+<meta property="og:url" content="https://thingsofariel.github.io/Project-Portofolio/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ariel S Toi — Web Developer &amp; System Architect">
+<meta name="twitter:description" content="Portfolio of Ariel S Toi — IT Support, Web Developer, System Architect.">
+<meta name="twitter:image" content="https://thingsofariel.github.io/Project-Portofolio/assets/images/profile.webp">
 
 <!-- Bootstrap Icons -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<!-- Devicon: real tech-stack logos for the Skills section -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -34,8 +56,6 @@
     </svg>
   </div>
 </div>
-
-  <header class="site-header">
 
 <!-- ============ NAV ============ -->
 <header class="site-header">
@@ -93,8 +113,6 @@
             <i class="bi bi-arrow-down-right"></i> View Projects
           </a>
         </div>
-
-        <p class="hero-note"><i class="bi bi-file-earmark-pdf"></i> Note for Ariel: add your CV file at <code>assets/CV-Ariel-S-Toi.pdf</code>, or edit the link above.</p>
       </div>
 
       <div class="hero-visual">
@@ -179,20 +197,34 @@
           </div>
 
           <div class="lanyard reveal" id="lanyard">
-            <span class="lanyard-clip"></span>
-            <svg class="lanyard-string" viewBox="0 0 2 60" preserveAspectRatio="none" aria-hidden="true">
-              <path d="M1,0 L1,60" />
-            </svg>
+            <div class="lanyard-strap" aria-hidden="true">
+              <span class="lanyard-strap-text">AST.DEV &middot; AST.DEV &middot; AST.DEV &middot; AST.DEV</span>
+            </div>
+            <div class="lanyard-clip" aria-hidden="true"></div>
+
             <div class="lanyard-badge">
+              <span class="lanyard-badge-punch" aria-hidden="true"></span>
+
+              <div class="lanyard-badge-header">
+                <span class="lanyard-badge-org">AST<span class="logo-dot">.</span>DEV</span>
+                <span class="lanyard-badge-id">ID // 0104</span>
+              </div>
+
               <div class="photo-slot photo-slot--about">
                 <div class="photo-placeholder">
                   <i class="bi bi-image"></i>
                   <span>assets/images/about.webp</span>
                 </div>
-                <img src="assets/images/about.webp" alt="Ariel at work" onerror="this.remove()">
+                <img src="assets/images/about.webp" alt="Ariel at work" loading="lazy" onerror="this.remove()">
               </div>
-              <div class="lanyard-badge-strip">
-                <i class="bi bi-code-slash"></i> Full Stack &amp; Systems
+
+              <div class="lanyard-badge-info">
+                <h4>Ariel S Toi</h4>
+                <p>System Architect</p>
+                <div class="lanyard-badge-footer">
+                  <span class="lanyard-badge-barcode" aria-hidden="true"></span>
+                  <span class="lanyard-badge-valid">VALID</span>
+                </div>
               </div>
             </div>
           </div>
@@ -217,34 +249,34 @@
         <div class="skills-group reveal">
           <h3 class="skills-group-title">Backend &amp; Data</h3>
           <div class="skills-grid">
-            <div class="skill-card"><i class="bi bi-nodejs"></i><span>Node.js</span></div>
-            <div class="skill-card"><i class="bi bi-hdd-network"></i><span>Express</span></div>
-            <div class="skill-card"><i class="bi bi-database"></i><span>PostgreSQL</span></div>
-            <div class="skill-card"><i class="bi bi-database-fill-gear"></i><span>Prisma ORM</span></div>
-            <div class="skill-card"><i class="bi bi-lightning-charge"></i><span>Redis / BullMQ</span></div>
-            <div class="skill-card"><i class="bi bi-file-earmark-easel"></i><span>SQLite</span></div>
+            <div class="skill-card"><i class="devicon-nodejs-plain"></i><span>Node.js</span></div>
+            <div class="skill-card"><i class="devicon-express-original"></i><span>Express</span></div>
+            <div class="skill-card"><i class="devicon-postgresql-plain"></i><span>PostgreSQL</span></div>
+            <div class="skill-card"><i class="devicon-prisma-original"></i><span>Prisma ORM</span></div>
+            <div class="skill-card"><i class="devicon-redis-plain"></i><span>Redis / BullMQ</span></div>
+            <div class="skill-card"><i class="devicon-sqlite-plain"></i><span>SQLite</span></div>
           </div>
         </div>
 
         <div class="skills-group reveal">
           <h3 class="skills-group-title">Frontend</h3>
           <div class="skills-grid">
-            <div class="skill-card"><i class="bi bi-filetype-html"></i><span>HTML5</span></div>
-            <div class="skill-card"><i class="bi bi-filetype-css"></i><span>CSS3</span></div>
-            <div class="skill-card"><i class="bi bi-bootstrap"></i><span>Bootstrap / Icons</span></div>
-            <div class="skill-card"><i class="bi bi-filetype-js"></i><span>JavaScript</span></div>
-            <div class="skill-card"><i class="bi bi-lightning"></i><span>React + Vite</span></div>
+            <div class="skill-card"><i class="devicon-html5-plain"></i><span>HTML5</span></div>
+            <div class="skill-card"><i class="devicon-css3-plain"></i><span>CSS3</span></div>
+            <div class="skill-card"><i class="devicon-bootstrap-plain"></i><span>Bootstrap / Icons</span></div>
+            <div class="skill-card"><i class="devicon-javascript-plain"></i><span>JavaScript</span></div>
+            <div class="skill-card"><i class="devicon-react-original"></i><span>React + Vite</span></div>
           </div>
         </div>
 
         <div class="skills-group reveal">
           <h3 class="skills-group-title">Infra &amp; Tools</h3>
           <div class="skills-grid">
-            <div class="skill-card"><i class="bi bi-box-seam"></i><span>Docker Compose</span></div>
-            <div class="skill-card"><i class="bi bi-github"></i><span>Git / GitHub</span></div>
+            <div class="skill-card"><i class="devicon-docker-plain"></i><span>Docker Compose</span></div>
+            <div class="skill-card"><i class="devicon-git-plain"></i><span>Git / GitHub</span></div>
             <div class="skill-card"><i class="bi bi-shield-lock"></i><span>JWT Auth</span></div>
-            <div class="skill-card"><i class="bi bi-file-earmark-pdf"></i><span>Puppeteer / qpdf</span></div>
-            <div class="skill-card"><i class="bi bi-terminal"></i><span>Fedora Linux</span></div>
+            <div class="skill-card"><i class="devicon-puppeteer-plain"></i><span>Puppeteer / qpdf</span></div>
+            <div class="skill-card"><i class="devicon-fedora-plain"></i><span>Fedora Linux</span></div>
           </div>
         </div>
 
@@ -282,7 +314,7 @@
               <i class="bi bi-receipt-cutoff"></i>
               <span>assets/images/projects/payslip.webp</span>
             </div>
-            <img src="assets/images/projects/payslip.webp" alt="Payslip system screenshot" onerror="this.remove()">
+            <img src="assets/images/projects/payslip.webp" alt="Payslip system screenshot" loading="lazy" onerror="this.remove()">
           </div>
           <div class="project-body">
             <div class="project-head">
@@ -317,7 +349,7 @@
               <i class="bi bi-mortarboard"></i>
               <span>assets/images/projects/fortuna-center.webp</span>
             </div>
-            <img src="assets/images/projects/fortuna-center.webp" alt="Fortuna Center website screenshot" onerror="this.remove()">
+            <img src="assets/images/projects/fortuna-center.webp" alt="Fortuna Center website screenshot" loading="lazy" onerror="this.remove()">
           </div>
           <div class="project-body">
             <div class="project-head">
@@ -348,7 +380,7 @@
               <i class="bi bi-heart"></i>
               <span>assets/images/projects/wedding.webp</span>
             </div>
-            <img src="assets/images/projects/wedding.webp" alt="Wedding invitation site screenshot" onerror="this.remove()">
+            <img src="assets/images/projects/wedding.webp" alt="Wedding invitation site screenshot" loading="lazy" onerror="this.remove()">
           </div>
           <div class="project-body">
             <div class="project-head">
@@ -380,7 +412,7 @@
               <i class="bi bi-person-workspace"></i>
               <span>assets/images/projects/personal-web.webp</span>
             </div>
-            <img src="assets/images/projects/personal-web.webp" alt="Personal portfolio site screenshot" onerror="this.remove()">
+            <img src="assets/images/projects/personal-web.webp" alt="Personal portfolio site screenshot" loading="lazy" onerror="this.remove()">
           </div>
           <div class="project-body">
             <div class="project-head">

@@ -496,7 +496,42 @@ html[data-theme="light"] .id-card { box-shadow: 0 30px 60px -25px rgba(20,24,29,
    Sections / title blocks
    ========================================================= */
 .section { padding: 88px 0; }
-.section--alt { background: var(--bg-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+/* ---- Alt sections: translucent + blurred rather than a hard block,
+   so the blueprint grid/waves stay visible underneath and the boundary
+   fades in gradually instead of cutting off at a hard line. ---- */
+.section--alt {
+  position: relative;
+  background: color-mix(in srgb, var(--bg-alt) 88%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.section--alt::before,
+.section--alt::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 140px;
+  pointer-events: none;
+  z-index: 0;
+}
+.section--alt::before {
+  top: -1px;
+  background: linear-gradient(to bottom,
+    transparent, color-mix(in srgb, var(--bg-alt) 88%, transparent));
+}
+.section--alt::after {
+  bottom: -1px;
+  background: linear-gradient(to top,
+    transparent, color-mix(in srgb, var(--bg-alt) 88%, transparent));
+}
+.section--alt > .container { position: relative; z-index: 1; }
+
+@media (max-width: 720px) {
+  /* Backdrop-blur over a large scrolling area is costly on low-power
+     mobile GPUs; drop it there and lean on the translucency alone. */
+  .section--alt { backdrop-filter: none; -webkit-backdrop-filter: none; }
+}
 
 .title-block {
   display: flex;
@@ -575,42 +610,77 @@ html[data-theme="light"] .id-card { box-shadow: 0 30px 60px -25px rgba(20,24,29,
 .stat-plus { font-size: 16px; }
 .stat-label { font-size: 12.5px; color: var(--text-muted); font-family: var(--font-mono); }
 
-.photo-slot--about {
-  aspect-ratio: 4/3;
-  padding: 0;
-  border-radius: var(--radius-sm);
-}
-
-/* ---- Hanging lanyard badge (About section) ---- */
+/* ---- Hanging lanyard ID card (About section) ----
+   Modeled on a BUMN-style employee badge: woven strap worn around the
+   neck, metal swivel clip, punch-hole card holder, header band, photo,
+   name plate, and a barcode footer. */
 .lanyard {
   grid-column: 1 / -1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 4px;
+  padding-top: 6px;
   cursor: pointer;
 }
-.lanyard-clip {
+
+/* Woven fabric strap */
+.lanyard-strap {
+  position: relative;
   width: 34px;
-  height: 12px;
-  border-radius: 4px 4px 2px 2px;
-  background: linear-gradient(180deg, var(--line-strong), var(--line));
-  border: 1px solid var(--line-strong);
+  height: 108px;
+  border-radius: 4px 4px 0 0;
+  overflow: hidden;
+  background:
+    repeating-linear-gradient(135deg,
+      rgba(0,0,0,.16) 0px, rgba(0,0,0,.16) 2px,
+      transparent 2px, transparent 8px),
+    linear-gradient(180deg, var(--accent-strong), var(--accent));
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.08);
 }
-.lanyard-string {
-  width: 2px;
-  height: 46px;
-  overflow: visible;
+.lanyard-strap-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--font-mono);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  color: #06201C;
+  opacity: .55;
+  white-space: nowrap;
 }
-.lanyard-string path {
-  fill: none;
-  stroke: var(--line-strong);
-  stroke-width: 2;
-  stroke-dasharray: 3 3;
+
+/* Metal swivel clip joining strap to card */
+.lanyard-clip {
+  width: 30px;
+  height: 14px;
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(180deg, #E6E9ED, #9AA3AD 45%, #C7CCD1);
+  border: 1px solid rgba(0,0,0,.25);
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.25);
 }
+.lanyard-clip::after {
+  content: '';
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px; height: 5px;
+  border-radius: 3px;
+  background: rgba(0,0,0,.25);
+}
+
+/* The card itself */
 .lanyard-badge {
   width: 100%;
-  max-width: 280px;
+  max-width: 220px;
+  margin-top: -2px;
+  position: relative;
   background: var(--surface-2);
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
@@ -622,19 +692,84 @@ html[data-theme="light"] .id-card { box-shadow: 0 30px 60px -25px rgba(20,24,29,
 }
 html[data-theme="light"] .lanyard-badge { box-shadow: 0 20px 40px -20px rgba(20,24,29,.25); }
 
-.lanyard-badge-strip {
-  display: flex; align-items: center; gap: 8px;
-  padding: 10px 14px;
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  color: var(--text-muted);
-  border-top: 1px solid var(--line);
+/* Glossy plastic card-holder sheen */
+.lanyard-badge::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(115deg,
+    rgba(255,255,255,.10) 0%, rgba(255,255,255,.10) 18%,
+    transparent 32%, transparent 100%);
 }
-.lanyard-badge-strip i { color: var(--amber); }
+
+.lanyard-badge-punch {
+  position: absolute;
+  top: 8px; left: 50%;
+  transform: translateX(-50%);
+  width: 16px; height: 6px;
+  border-radius: 3px;
+  background: var(--bg);
+  border: 1px solid var(--line-strong);
+  z-index: 4;
+}
+
+.lanyard-badge-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 12px 8px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-mono);
+}
+.lanyard-badge-org { font-size: 11px; font-weight: 700; letter-spacing: .03em; color: var(--text); }
+.lanyard-badge-id { font-size: 8.5px; color: var(--text-faint); }
+
+.photo-slot--about {
+  aspect-ratio: 3 / 4;
+  padding: 0;
+  border-radius: 0;
+}
+
+.lanyard-badge-info { padding: 12px 14px 14px; text-align: center; }
+.lanyard-badge-info h4 { margin: 0 0 2px; font-family: var(--font-display); font-size: 15.5px; }
+.lanyard-badge-info p {
+  margin: 0 0 12px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--text-muted);
+}
+.lanyard-badge-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line-strong);
+}
+.lanyard-badge-barcode {
+  flex: 1;
+  height: 16px;
+  margin-right: 10px;
+  opacity: .55;
+  background: repeating-linear-gradient(90deg,
+    var(--text-faint) 0px, var(--text-faint) 1px, transparent 1px, transparent 3px,
+    var(--text-faint) 3px, var(--text-faint) 4px, transparent 4px, transparent 5px,
+    var(--text-faint) 5px, var(--text-faint) 7px, transparent 7px, transparent 8px);
+}
+.lanyard-badge-valid {
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  color: var(--accent);
+  white-space: nowrap;
+}
 
 @keyframes lanyard-idle-swing {
-  0%, 100% { transform: rotate(-1.4deg); }
-  50% { transform: rotate(1.4deg); }
+  0%, 100% { transform: rotate(-1.6deg); }
+  50% { transform: rotate(1.6deg); }
 }
 
 .lanyard.is-active .lanyard-badge {
