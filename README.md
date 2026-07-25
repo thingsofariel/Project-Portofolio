@@ -1,63 +1,36 @@
-# Ariel S Toi — Portfolio
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Plain HTML/CSS/JS, no build step. Theme: "blueprint" (system-architecture
-schematic look), with a dark/light toggle (saved in the browser, top-right
-button).
+## Getting Started
 
-## Run it locally
-
-Just open `index.html` in a browser, or serve it:
+First, run the development server:
 
 ```bash
-cd ariel-portfolio
-python3 -m http.server 8000
-# visit http://localhost:8000
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## Add your photos
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Drop images at these exact paths and they'll appear automatically
-(placeholders show until then, so nothing breaks if you skip one):
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-| Slot                     | Path                                     | Suggested size |
-|---------------------------|-------------------------------------------|-----------------|
-| Hero ID card photo         | `assets/images/profile.webp`              | ~800×600 (4:3)  |
-| About section photo        | `assets/images/about.webp`                | ~1200×750 (16:10)|
-| Payslip project thumbnail  | `assets/images/projects/payslip.webp`     | ~1280×720 (16:9)|
-| Fortuna Center thumbnail   | `assets/images/projects/fortuna-center.webp`| 1280×720       |
-| Wedding site thumbnail     | `assets/images/projects/wedding.webp`     | 1280×720        |
-| Personal web thumbnail     | `assets/images/projects/personal-web.webp`| 1280×720        |
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-Images use WebP for smaller file sizes. Convert with `cwebp -q 82 input.jpg -o output.webp`
-(install via `sudo dnf install libwebp-tools` on Fedora).
+## Learn More
 
-Your CV: add a PDF at `assets/CV-Ariel-S-Toi.pdf` (the Download CV button
-already links there).
+To learn more about Next.js, take a look at the following resources:
 
-## Things I assumed — please double check
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-- **Fortuna Center Website**: I didn't have the exact tech stack, so I guessed
-  Node.js/Express and flagged it with a "Confirm stack ✎" tag in the Projects
-  section (`index.html`, search for "Confirm with Ariel"). Update the tag row
-  and the GitHub link (I used `handfortunateam-dev/fortuna-center-app` from
-  what I know — confirm it's public/correct).
-- **Wedding Invitation** and **Personal Web Portfolio** cards have "Add link"
-  placeholders since I didn't have repo/live URLs for those — search
-  `link-disabled` in `index.html` to update them.
-- Stats shown: GPA 3.47, and project count based on the 4 repos you listed.
-  Adjust freely in the About section.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Structure
+## Deploy on Vercel
 
-```
-index.html        → all content/sections
-css/style.css      → theme tokens + layout (edit CSS variables in :root for colors)
-js/main.js         → theme toggle + mobile nav
-assets/images/      → put your photos here
-```
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-## Deploying
-
-Easiest free option: **GitHub Pages**. Push this folder to a repo, then in
-repo Settings → Pages, set source to the `main` branch root. Or drag-and-drop
-the folder into Netlify/Vercel for an instant URL.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
